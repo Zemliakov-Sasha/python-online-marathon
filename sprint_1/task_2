@@ -1,0 +1,7 @@
+def filterBible(scripture, book, chapter):
+    reg = book + chapter
+    sort = []
+    for s in scripture:
+        if reg == s[:5]:
+            sort.append(s)
+    return sort
