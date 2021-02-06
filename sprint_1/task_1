@@ -1,0 +1,15 @@
+def kthTerm(n, k):
+    step = 0
+    mass = [1]
+    pmass = []
+    while True:
+        step += 1
+        pmass.append(n**step)
+        for m in mass:
+            pmass.append(n**step + m)
+        mass += pmass
+        pmass.clear()
+        if len(mass) > k:
+            break
+    return mass[k-1]
+
